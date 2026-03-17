@@ -1,0 +1,15 @@
+
+A string
+%2500 é o resultado de uma dupla codificação URL (double URL-encoding) de um NULL Byte. 
+Aqui está o processo de codificação:
+
+    NULL Byte: Representado como %00.
+    Dupla Codificação: O caractere % é codificado novamente como %25.
+    Resultado: % torna-se %25, resultando em %2500. 
+
+Onde é utilizado?
+
+    Segurança e Fuzzing: É comumente usado em testes de intrusão (pen-testing) para contornar filtros de segurança em servidores web que decodificam a URL apenas uma vez, permitindo que o NULL Byte (%00) chegue à aplicação e cause comportamentos inesperados, como injeção de SQL ou manipulação de arquivos.
+    Desafios CTF: Frequentemente necessário em desafios como o OWASP Juice Shop. 
+
+Em resumo, %2500 é uma forma de garantir que a sequência %00 seja transmitida intacta através de proxies ou regras de segurança antes de ser processada pelo backend
